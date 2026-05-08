@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="the6.css">
+</head>
+<body>
+
+    <!-- Decorative animated book -->
+    <div class="book-decoration">
+        <div class="book">
+            <div class="cover">
+                <div class="page-content">Library<br>Magic</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Form -->
+    <div id="login-form" class="container">
+        <h1><i class="fas fa-book-open" style="font-size:1.6rem; margin-right:10px;"></i>The 6 Library</h1>
+        <p class="subtitle">Sign in to manage your books</p>
+
+        <div id="error-message" class="error"></div>
+
+        <div class="form-control">
+            <label for="username"><i class="fas fa-user"></i> Username</label>
+            <input type="text" id="username" placeholder="Enter your username" required>
+        </div>
+
+        <div class="form-control">
+            <label for="password"><i class="fas fa-lock"></i> Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+
+        <button onclick="login()"><i class="fas fa-sign-in-alt" style="margin-right:8px;"></i>Login</button>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="dashboard-container" style="display: none;">
+        <div class="dashboard-header">
+            <h1><i class="fas fa-book-open" style="font-size:1.4rem; margin-right:10px;"></i>The 6 Library</h1>
+            <button class="logout-button" onclick="logout()"><i class="fas fa-sign-out-alt" style="margin-right:6px;"></i>Logout</button>
+        </div>
+        <div class="welcome-message">Welcome back, <span id="username-display"></span>!</div>
+
+        <div id="add-book-section">
+            <h2><i class="fas fa-plus-circle" style="margin-right:8px;"></i>Add a Book</h2>
+            <div class="form-row">
+                <div class="form-control">
+                    <label for="book-title"><i class="fas fa-book"></i> Book Title</label>
+                    <input type="text" id="book-title" placeholder="Enter book title">
+                </div>
+                <div class="form-control">
+                    <label for="book-author"><i class="fas fa-user"></i> Author</label>
+                    <input type="text" id="book-author" placeholder="Enter author name">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-control">
+                    <label for="borrow-date"><i class="fas fa-calendar-alt"></i> Borrow Date</label>
+                    <input type="date" id="borrow-date">
+                </div>
+                <div class="form-control">
+                    <label for="return-date"><i class="fas fa-calendar-check"></i> Return Date</label>
+                    <input type="date" id="return-date">
+                </div>
+            </div>
+            <button onclick="addBook()"><i class="fas fa-plus" style="margin-right:8px;"></i>Add Book</button>
+        </div>
+
+        <div id="book-list-section" class="book-list">
+            <h2><i class="fas fa-list" style="margin-right:8px;"></i>Book List</h2>
+            <div id="book-list"></div>
+        </div>
+    </div>
+
+    <script src="the6.js"></script>
+</body>
+</html>
